@@ -1,1 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F5F5F5;
+            margin: 0;
+            padding: 7%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            color: #98FF2F; /* Changed color and font-size */
+            margin-bottom: 20px;
+        }
+
+        form {
+            width: 100%;
+            max-width: 320px;
+            background-color: #476C68;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            color: #26FF00;
+            margin-bottom: 10px;
+        }
+
+        select,
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #333;
+            border-radius: 3px;
+        }
+
+        select option {
+            background-color: #FFFE00;
+            color: #333;
+        }
+
+        select:focus,
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            outline: none;
+            border-color: #007BFF;
+            box-shadow: 0 0 10px #007BFF;
+        }
+
+        @media screen and (max-width: 480px) {
+            /* Adjust styles for small screens */
+            form {
+                padding: 10px;
+            }
+
+            select,
+            input[type="text"],
+            input[type="password"] {
+                padding: 8px;
+            }
+        }
+
+        /* Add styles for the submission button */
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #5800FF;
+            color: #FFF;
+            border: none;
+            border-radius: 5px; /* Changed border-radius value */
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        #success-message {
+            display: none;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1;
+            box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.2);
+            border-radius: 0; /* Changed border-radius value */
+            transition: top 0.5s;
+        }
+
+        #success-message.show {
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <br>
+    <form>
+        <div> <h1>Registration Form</h1></div>
+
+        <label for="institution">Choose your institution:</label>
+        <select id="institution">
+            <option>IFM</option>
+            <option>Ardhi</option>
+            <option>Mzumbe</option>
+            <option>Udsm</option>
+            <option>Udom</option>
+        </select>
+        <label for="username">Username:</label>
+        <input type="text" id="username">
+        <label for="password">Password:</label> <!-- Added the "for" attribute correctly -->
+        <input type="password" id="password">
+        <label for="firstname">First name:</label>
+        <input type="text" id="firstname">
+        <label for="lastname">Last name:</label>
+        <input type="text" id="lastname">
+        <label for="email">Email:</label>
+        <input type="text" id="email">
+        
+        <label for="comment">You really appreciate us</label>
+        <input type="radio" id="comment"> <br> <!-- Added id for radio input -->
+        <br>
+        
+        <input type="submit" value="Submit" onclick="showSuccessMessage()">
+    </form>
+    
+    <div id="success-message">Successfully registered!</div>
+
+    <script>
+        function showSuccessMessage() {
+            var successMessage = document.getElementById("success-message");
+            successMessage.classList.add("show");
+        }
+    </script>
+</body>
+</html>
 
